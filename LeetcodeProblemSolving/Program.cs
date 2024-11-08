@@ -53,27 +53,39 @@ namespace PalindromeChecker
         */
 
 
+
+
         static void Main(string[] args)
         {
-            // Create first number: 342 (in reverse order: 2 -> 4 -> 3)
-            ListNode l1 = new ListNode(2, new ListNode(4, new ListNode(3)));
+            /*  // Create first number: 342 (in reverse order: 2 -> 4 -> 3)
+              ListNode l1 = new ListNode(2, new ListNode(4, new ListNode(3)));
 
-            // Create second number: 465 (in reverse order: 5 -> 6 -> 4)
-            ListNode l2 = new ListNode(5, new ListNode(6, new ListNode(4)));
+              // Create second number: 465 (in reverse order: 5 -> 6 -> 4)
+              ListNode l2 = new ListNode(5, new ListNode(6, new ListNode(4)));
 
-            // Instantiate the Solution class and call the AddTwoNumbers method
-            Solution solution = new Solution();
-            ListNode result = solution.AddTwoNumbers(l1, l2);
+              // Instantiate the Solution class and call the AddTwoNumbers method
+              Solution solution = new Solution();
+              ListNode result = solution.AddTwoNumbers(l1, l2);
 
-            // Print the result
-            Console.Write("Result: ");
-            while (result != null)
-            {
-                Console.Write(result.val + " ");
-                result = result.next;
-            }
+              // Print the result
+              Console.Write("Result: ");
+              while (result != null)
+              {
+                  Console.Write(result.val + " ");
+                  result = result.next;
+              }
 
-            Console.ReadLine(); // Keep console open
+              Console.ReadLine(); // Keep console open*/
+
+            /* Console.Write("Enter a Roman numeral: ");
+             string romanNumeral = Console.ReadLine();
+             int result = RomanToInt(romanNumeral);
+             Console.WriteLine($"The integer value of {romanNumeral} is: {result}");*/
+
+            string[] words = { "flower", "flow", "flight" };
+            string result = Solution.LongestCommonPrefix(words);
+            Console.WriteLine($"Longest common prefix: \"{result}\"");
+            Console.ReadLine(); // Keep console open*/
         }
     }
 }

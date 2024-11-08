@@ -12,7 +12,7 @@
     }
     public class Solution
     {
-        public ListNode AddTwoNumbers(ListNode l1, ListNode l2)
+        /*public ListNode AddTwoNumbers(ListNode l1, ListNode l2)
         {
             ListNode dummyHead = new ListNode(0); // Dummy head to simplify handling the result list
             ListNode current = dummyHead;
@@ -41,6 +41,72 @@
             }
 
             return dummyHead.next; // Return the next node to skip the dummy head
+        }*/
+
+        /*        public static int RomanToInt(string s)
+                {
+                    // Dictionary to store the Roman numeral values
+                    Dictionary<char, int> romanValues = new Dictionary<char, int>()
+                        {
+                            {'I', 1},
+                            {'V', 5},
+                            {'X', 10},
+                            {'L', 50},
+                            {'C', 100},
+                            {'D', 500},
+                            {'M', 1000}
+                        };
+
+                    int total = 0;
+                    int previousValue = 0;
+
+                    // Iterate over the string from left to right
+                    foreach (char c in s)
+                    {
+                        int currentValue = romanValues[c];
+
+                        // If the previous value is smaller, we need to subtract it twice
+                        if (previousValue < currentValue)
+                        {
+                            total += currentValue - 2 * previousValue;
+                        }
+                        else
+                        {
+                            total += currentValue;
+                        }
+
+                        // Update the previous value
+                        previousValue = currentValue;
+                    }
+
+                    return total;
+                }
+        */
+        public static string LongestCommonPrefix(string[] strs)
+        {
+            if (strs == null || strs.Length == 0)
+                return "";
+
+            // Start with the first string as the initial prefix
+            string prefix = strs[0];
+
+            // Compare the prefix with each subsequent string
+            for (int i = 1; i < strs.Length; i++)
+            {
+                // Adjust the prefix to match the current string
+
+                while (strs[i].IndexOf(prefix) != 0)
+                {
+                    int ss = strs[i].IndexOf(prefix);
+                    // Shorten the prefix by removing the last character
+                    prefix = prefix.Substring(0, prefix.Length - 1);
+
+                    // If the prefix becomes empty, there's no common prefix
+                    if (string.IsNullOrEmpty(prefix))
+                        return "";
+                }
+            }
+            return prefix;
         }
     }
 }
