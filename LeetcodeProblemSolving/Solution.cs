@@ -108,5 +108,44 @@
             }
             return prefix;
         }
+
+        public bool IsValid(string s)
+        {
+            // Dictionary to map closing brackets to their corresponding opening brackets
+            Dictionary<char, char> bracketPairs = new Dictionary<char, char>
+            {
+                { ')', '(' },
+                { '}', '{' },
+                { ']', '[' }
+            };
+
+            // Stack to hold opening brackets
+            Stack<char> stack = new Stack<char>();
+
+            // Loop through each character in the string
+            foreach (char ch in s)
+            {
+                // If the character is a closing bracket
+                if (bracketPairs.ContainsKey(ch))
+                {
+                    // Check the top of the stack or use a dummy value if the stack is empty
+                    char topElement = stack.Count > 0 ? stack.Pop() : '#';
+
+                    // If the popped element doesn't match the corresponding opening bracket
+                    if (topElement != bracketPairs[ch])
+                    {
+                        return false;
+                    }
+                }
+                else
+                {
+                    // Push open brackets onto the stack
+                    stack.Push(ch);
+                }
+            }
+
+            // Check if the stack is empty at the end
+            return stack.Count == 0;
+        }
     }
 }

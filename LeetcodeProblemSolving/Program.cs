@@ -82,10 +82,26 @@ namespace PalindromeChecker
              int result = RomanToInt(romanNumeral);
              Console.WriteLine($"The integer value of {romanNumeral} is: {result}");*/
 
-            string[] words = { "flower", "flow", "flight" };
-            string result = Solution.LongestCommonPrefix(words);
-            Console.WriteLine($"Longest common prefix: \"{result}\"");
-            Console.ReadLine(); // Keep console open*/
+            /*  string[] words = { "flower", "flow", "flight" };
+              string result = Solution.LongestCommonPrefix(words);
+              Console.WriteLine($"Longest common prefix: \"{result}\"");
+              Console.ReadLine(); // Keep console open*/
+
+
+            Console.WriteLine("Enter a string of parentheses to check if it is valid:");
+            string input = Console.ReadLine();
+
+            Solution solution = new Solution();
+            bool isValid = solution.IsValid(input);
+
+            if (isValid)
+            {
+                Console.WriteLine("The string is valid.");
+            }
+            else
+            {
+                Console.WriteLine("The string is not valid.");
+            }
         }
     }
 }
