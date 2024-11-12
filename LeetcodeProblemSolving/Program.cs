@@ -1,5 +1,4 @@
 ﻿using LeetcodeProblemSolving;
-
 namespace PalindromeChecker
 {
     class Program
@@ -88,20 +87,38 @@ namespace PalindromeChecker
               Console.ReadLine(); // Keep console open*/
 
 
-            Console.WriteLine("Enter a string of parentheses to check if it is valid:");
-            string input = Console.ReadLine();
+            /*   Console.WriteLine("Enter a string of parentheses to check if it is valid:");
+               string input = Console.ReadLine();
 
-            Solution solution = new Solution();
-            bool isValid = solution.IsValid(input);
+               Solution solution = new Solution();
+               bool isValid = solution.IsValid(input);
 
-            if (isValid)
-            {
-                Console.WriteLine("The string is valid.");
-            }
-            else
-            {
-                Console.WriteLine("The string is not valid.");
-            }
+               if (isValid)
+               {
+                   Console.WriteLine("The string is valid.");
+               }
+               else
+               {
+                   Console.WriteLine("The string is not valid.");
+               }*/
+
+            // Example lists
+            int[] list1Values = { 1, 2, 4 };
+            int[] list2Values = { 1, 3, 4 };
+
+            ListNode list1 = Solution.CreateLinkedList(list1Values);
+            ListNode list2 = Solution.CreateLinkedList(list2Values);
+
+            Console.WriteLine("List 1:");
+            Solution.PrintLinkedList(list1);
+
+            Console.WriteLine("List 2:");
+            Solution.PrintLinkedList(list2);
+
+            ListNode mergedList = Solution.MergeTwoLists(list1, list2);
+
+            Console.WriteLine("Merged List:");
+            Solution.PrintLinkedList(mergedList);
         }
     }
 }

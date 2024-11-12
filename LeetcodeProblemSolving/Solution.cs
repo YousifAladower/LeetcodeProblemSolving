@@ -147,5 +147,71 @@
             // Check if the stack is empty at the end
             return stack.Count == 0;
         }
+
+
+        public static ListNode MergeTwoLists(ListNode list1, ListNode list2)
+        {
+            ListNode dummy = new ListNode(0);  // Create a dummy node
+            ListNode current = dummy;          // This will be our iterator
+
+            while (list1 != null && list2 != null)
+            {
+                if (list1.val < list2.val)
+                {
+                    current.next = list1;
+                    list1 = list1.next;
+                }
+                else
+                {
+                    current.next = list2;
+                    list2 = list2.next;
+                }
+                current = current.next; // Move current to the last node in the merged list
+            }
+
+            // Append the remaining nodes in list1 or list2
+            if (list1 != null)
+            {
+                current.next = list1;
+            }
+            else if (list2 != null)
+            {
+                current.next = list2;
+            }
+
+            return dummy.next;  // The merged list starts from dummy.next
+        }
+
+        // Helper function to create a linked list from an array
+        public static ListNode CreateLinkedList(int[] values)
+        {
+            ListNode head = null;
+            ListNode current = null;
+            foreach (var value in values)
+            {
+                if (head == null)
+                {
+                    head = new ListNode(value);
+                    current = head;
+                }
+                else
+                {
+                    current.next = new ListNode(value);
+                    current = current.next;
+                }
+            }
+            return head;
+        }
+
+        // Helper function to print the linked list
+        public static void PrintLinkedList(ListNode head)
+        {
+            while (head != null)
+            {
+                Console.Write(head.val + " -> ");
+                head = head.next;
+            }
+            Console.WriteLine("null");
+        }
     }
 }
