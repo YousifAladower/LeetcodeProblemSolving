@@ -103,22 +103,35 @@ namespace PalindromeChecker
                }*/
 
             // Example lists
-            int[] list1Values = { 1, 2, 4 };
-            int[] list2Values = { 1, 3, 4 };
+            /*   int[] list1Values = { 1, 2, 4 };
+               int[] list2Values = { 1, 3, 4 };
 
-            ListNode list1 = Solution.CreateLinkedList(list1Values);
-            ListNode list2 = Solution.CreateLinkedList(list2Values);
+               ListNode list1 = Solution.CreateLinkedList(list1Values);
+               ListNode list2 = Solution.CreateLinkedList(list2Values);
 
-            Console.WriteLine("List 1:");
-            Solution.PrintLinkedList(list1);
+               Console.WriteLine("List 1:");
+               Solution.PrintLinkedList(list1);
 
-            Console.WriteLine("List 2:");
-            Solution.PrintLinkedList(list2);
+               Console.WriteLine("List 2:");
+               Solution.PrintLinkedList(list2);
 
-            ListNode mergedList = Solution.MergeTwoLists(list1, list2);
+               ListNode mergedList = Solution.MergeTwoLists(list1, list2);
 
-            Console.WriteLine("Merged List:");
-            Solution.PrintLinkedList(mergedList);
+               Console.WriteLine("Merged List:");
+               Solution.PrintLinkedList(mergedList);*/
+
+
+            int[] nums = { 0, 0, 1, 1, 1, 2, 2, 3, 3, 4 };
+
+            int uniqueCount = Solution.RemoveDuplicates(nums);
+
+            Console.WriteLine("Number of unique elements: " + uniqueCount);
+            Console.WriteLine("Array with unique elements:");
+
+            for (int k = 0; k < uniqueCount; k++)
+            {
+                Console.Write(nums[k] + " ");
+            }
         }
     }
 }

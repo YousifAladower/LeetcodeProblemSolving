@@ -213,5 +213,23 @@
             }
             Console.WriteLine("null");
         }
+
+        public static int RemoveDuplicates(int[] nums)
+        {
+            if (nums.Length == 0) return 0;
+
+            int i = 0; // Pointer for the position of the last unique element
+            for (int j = 1; j < nums.Length; j++)
+            {
+                // If nums[j] is not equal to nums[i], we found a new unique element
+                if (nums[j] != nums[i])
+                {
+                    i++; // Move the unique pointer
+                    nums[i] = nums[j]; // Place the unique element in the next position
+                }
+            }
+
+            return i + 1; // Number of unique elements
+        }
     }
 }
